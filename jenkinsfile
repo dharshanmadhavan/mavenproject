@@ -3,12 +3,12 @@ pipeline{
     stages{
         stage("build"){
             steps{
-                mvn install
+                bat 'mvn install'
                 }
         }
         stage("pomfile"){
             steps{
-                java -jar target/java-project2-1.0-SNAPSHOT.java
+               bat 'java -jar target/java-project2-1.0-SNAPSHOT.java'
             }
         }
 
