@@ -1,0 +1,16 @@
+pipeline{
+    agent any
+    stages{
+        stage("build"){
+            steps{
+                mvn install
+                }
+        }
+        stage("pomfile"){
+            steps{
+                java -jar target/java-project2-1.0-SNAPSHOT.java
+            }
+        }
+
+    }
+}
